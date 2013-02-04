@@ -3,6 +3,8 @@ var http = require('http'),
     url = require('url'),
     querystring = require('querystring');
 
+var port = process.env.PORT || 1337;
+
 http.createServer(function (req, res) {
   if (req.url) {
     var parsedURL = url.parse(req.url, true);
@@ -57,6 +59,6 @@ http.createServer(function (req, res) {
     }
   }
 
-}).listen(1337, '127.0.0.1');
+}).listen(port, '127.0.0.1');
 
-console.log('Server running at http://127.0.0.1:1337/');
+console.log('Server running at http://127.0.0.1:' + port + '/');
