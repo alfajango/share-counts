@@ -1,1 +1,1 @@
-node: node count.js
+web: node count.js
