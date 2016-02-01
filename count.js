@@ -35,11 +35,11 @@ http.createServer(function (req, res) {
         console.log(parsedURL.query);
         var options = {
           host: 'www.stumbleupon.com',
-          port: 80,
+          port: 443,
           path: '/services/1.01/badge.getinfo?url=' + parsedURL.query.url
         };
         var out = "";
-        http.get(options, function(goores) {
+        https.get(options, function(goores) {
           console.log("Got response: " + goores.statusCode);
           goores.on('data', function (chunk) {
             out = out + chunk;
