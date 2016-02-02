@@ -15,7 +15,7 @@ http.createServer(function (req, res) {
         var options = {
           host: 'plusone.google.com',
           port: 443,
-          path: '/_/+1/fastbutton?url=' + parsedURL.query.url
+          path: '/_/+1/fastbutton?url=' + parsedURL.query.url.replace(/\/$/,"") // replace trailing slash which causes google plus not to find count
         };
         var out = "";
         https.get(options, function(goores) {
